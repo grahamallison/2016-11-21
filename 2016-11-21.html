@@ -89,7 +89,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-20 22:35</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-21 13:30</p>
           </hgroup>
   </slide>
 
@@ -145,6 +145,8 @@
 
 <p>See section 3.7 up to the end of &quot;E X A M P L E  <strong>B</strong>&quot;</p>
 
+<p>Maximum is similar.</p>
+
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>expected value</h2></hgroup><article  id="expected-value">
 
 </article></slide><slide class=''><hgroup><h2>big money!</h2></hgroup><article  id="big-money" class="build">
@@ -178,9 +180,9 @@
 
 <p>Proof: &#8230;</p>
 
-<p>\(X\sim\text{Geometric}(p).\) Then \(E(X) = p\).</p>
+<p>\(X\sim\text{Geometric}(p).\) Then \(E(X) = \frac{1}{p}\).</p>
 
-<p>Proof: &#8230;</p>
+<p>Proof: &#8230; (Use: \(\frac{d}{dr}\sum\limits_{x=0}^\infty r^x = \sum\limits_{x=1}^\infty xr^{x-1}\) when \(|r| &lt; 1.\))</p>
 
 <p>Exercise (book example): \(X\sim\text{Poisson}(\lambda).\) Then \(E(X) = \lambda\).</p>
 
@@ -194,19 +196,15 @@
 
 <p>For a sample space \(S\) and event \(A \subset S\), consider the &quot;indicator&quot; random variable \(I_A.\) Then \(E(I_A) = P(A).\)</p>
 
-</article></slide><slide class=''><hgroup><h2>expected value - continuous case</h2></hgroup><article  id="expected-value---continuous-case">
+</article></slide><slide class=''><hgroup><h2>expected value - continuous case</h2></hgroup><article  id="expected-value---continuous-case" class="build">
 
 <p>If \(X\) is continuous with density \(f\), its expected value is:</p>
 
 <p>\[E(X) = \int\limits_{-\infty}^{\infty} xf(x)\,dx\] provided \(\int\limits_{-\infty}^{\infty} |x|f(x)\,dx &lt; \infty\).</p>
 
-<p>Example: \(U \sim \text{Unif}[a,b]\)&#8230;</p>
+<p>Examples: \(U \sim \text{Unif}[a,b]\), \(Z \sim N(0,1)\), \(X\) Cauchy,&#8230;</p>
 
-<p>Example: \(Z \sim N(0,1)\) &#8230;</p>
-
-<p>Example (textbook): \(X\) Cauchy&#8230;.</p>
-
-<p>Example (textbook): \(X \sim \text{Gamma}(\alpha, \lambda)\)&#8230;.</p>
+<p>Exercise (textbook example): \(X \sim \text{Gamma}(\alpha, \lambda)\)</p>
 
 </article></slide><slide class=''><hgroup><h2>\(E(g(X))\) and extensions</h2></hgroup><article  id="egx-and-extensions" class="build">
 
@@ -244,6 +242,8 @@
 </article></slide><slide class=''><hgroup><h2>examples</h2></hgroup><article  id="examples">
 
 <p>Suppose \(X_1 \perp X_2.\) Consider \(E(X_1\cdot X_2)\)&#8230;</p>
+
+<p>Exercise: \(X_1 \perp X_2.\) Consider \({E\!\left(g(X_1)\, h(X_2)\right)}\)</p>
 
 <p>Now suppose \(X_1,\ldots,X_n\) are i.i.d. with \(E(X_i) = \mu.\) Consider: \[E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)...\]</p>
 

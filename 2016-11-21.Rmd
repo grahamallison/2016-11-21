@@ -72,6 +72,8 @@ $$\f{X_{(1)}}(x) = nf(x)[1-F(x)]^{n-1}$$
 
 See section 3.7 up to the end of "E X A M P L E\ \ **B**"
 
+Maximum is similar.
+
 # expected value
 
 ## big money! { .build }
@@ -108,9 +110,9 @@ $X\sim\text{Binomial}(n,p).$ Then $E(X) = np$.
 
 Proof: ...
 
-$X\sim\text{Geometric}(p).$ Then $E(X) = p$. 
+$X\sim\text{Geometric}(p).$ Then $E(X) = \frac{1}{p}$. 
 
-Proof: ...
+Proof: ... (Use: $\frac{d}{dr}\sum\limits_{x=0}^\infty r^x = \sum\limits_{x=1}^\infty xr^{x-1}$ when $|r| < 1.$)
 
 Exercise (book example): $X\sim\text{Poisson}(\lambda).$ Then $E(X) = \lambda$. 
 
@@ -124,21 +126,16 @@ Treat $X$ as a constant, i.e. $X = a$. Then $E(X)=E(a)=a$.
 
 For a sample space $S$ and event $A \subset S$, consider the "indicator" random variable $I_A.$ Then $E(I_A) = P(A).$
 
-## expected value - continuous case 
+## expected value - continuous case { .build }
 
 If $X$ is continuous with density $f$, its expected value is:
 
 $$E(X) = \int\limits_{-\infty}^{\infty} xf(x)\,dx$$
 provided $\int\limits_{-\infty}^{\infty} |x|f(x)\,dx < \infty$.
 
+Examples: $U \sim \text{Unif}[a,b]$, $Z \sim N(0,1)$, $X$ Cauchy,...
 
-Example: $U \sim \text{Unif}[a,b]$...
-
-Example: $Z \sim N(0,1)$ ...
-
-Example (textbook): $X$ Cauchy....
-
-Example (textbook): $X \sim \text{Gamma}(\alpha, \lambda)$....
+Exercise (textbook example): $X \sim \text{Gamma}(\alpha, \lambda)$
 
 ## $E(g(X))$ and extensions { .build }
 
@@ -179,6 +176,8 @@ $$E(Y) = \int\ldots\int g(x_1,\ldots,x_n) f(x_1,\ldots,x_n)\,dx_1\ldots\,dx_n$$
 ## examples
 
 Suppose $X_1 \perp X_2.$ Consider $E(X_1\cdot X_2)$...
+
+Exercise: $X_1 \perp X_2.$ Consider $\E{g(X_1)\, h(X_2)}$
 
 Now suppose $X_1,\ldots,X_n$ are i.i.d. with $E(X_i) = \mu.$ Consider:
 $$E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)...$$
