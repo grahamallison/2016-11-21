@@ -1,0 +1,251 @@
+---
+title: "STA257"
+author: "Neil Montgomery | HTML is official | PDF versions good for in-class use only"
+date: "Last edited: `r format(Sys.time(), '%Y-%m-%d %H:%M')`"
+output: 
+  ioslides_presentation: 
+    css: '../styles.css' 
+    widescreen: true 
+    transition: 0.001
+header-includes:
+- \usepackage{cancel}
+---
+\newcommand\given[1][]{\:#1\vert\:}
+\newcommand\P[1]{P{\left(#1\right)}}
+\newcommand\F[1]{F_{\tiny{#1}}}
+\newcommand\f[1]{f_{\tiny{#1}}}
+\newcommand\p[1]{p_{\tiny{#1}}}
+\newcommand\V[1]{\text{Var}\!\left(#1\right)}
+\newcommand\E[1]{E\!\left(#1\right)}
+
+## the classic density formulae: $W_1 = X + Y$
+
+$$\begin{align*}
+\f{W_1}(w) &= \int\limits_{-\infty}^\infty f(x, w-x)\,dx\\
+&= \int\limits_{-\infty}^\infty \f{X}(x)\f{Y}(w-x)\,dx \quad \left(\text{when } X\perp Y\right)
+\end{align*}$$
+Proof:...
+
+Example: $X \sim N(0,1)$ and $Y \sim N(0,1)$ with $X \perp Y$.
+
+Example: $X \sim\text{Unif}[0,1]$ and $Y \sim\text{Unif}[0,1]$ with $X\perp Y$.
+
+Exercise (textbook example): $X \sim \text{Exp}(\lambda)$ and $Y \sim \text{Exp}(\lambda)$ with $X \perp Y$
+
+## the classic density formulae: $W_2 = Y\,/\,X$
+
+$$\begin{align*}
+\f{W_2}(w) &= \int\limits_{-\infty}^\infty f(x, wx)|x|\,dx\\
+&= \int\limits_{-\infty}^\infty \f{X}(x)\f{Y}(wx)|x|\,dx \quad \left(\text{when } X\perp Y\right)
+\end{align*}$$
+
+Proof...
+
+"**Mandatory**" exercise (done in book as example): $X \sim N(0,1)$ and $Y \sim N(0,1)$ with $X \perp Y$. This is a classic. We say $W_2$ has a Cauchy distribution with density $\frac{1}{\pi}\frac{1}{1+w^2}$
+
+Example: $X \sim \text{Exp}(\lambda)$ and $Y \sim \text{Exp}(\lambda)$ with $X \perp Y$.
+
+## the minumum and maximum of $n$ r.v.s { .build }
+
+Practical example: A mine has 20 haul trucks with engines whose time-to-failure (from any cause) is random and with Exp$(\lambda)$ distribution. How long until the first failure of any truck?
+
+Assumption: engines fail independently. 
+
+Notation: $X_1, X_2, X_3,\ldots,X_{20}$ are independent (assumed) and have the same distribution Exp$(\lambda)$.
+
+"i.i.d.": *independent and identically distributed*
+
+Nothing special about 20, so let's consider the case of $X_1,\ldots,X_{n}$ i.i.d. Exp$(\lambda)$. The joint density will be:
+
+$$f(x_1,\ldots,x_n) = \lambda e^{-\lambda x_1}\cdots\lambda e^{-\lambda x_n}= \lambda^ne^{-n\lambda \sum x_i}$$
+
+## minimum of $n$ i.i.d. exponential r.v.s { .build }
+
+Denote by $X_{(1)}$ the time to the first failure.
+
+Theorem: $X_{(1)} \sim \text{Exp}(n\lambda).$
+
+Proof: ...
+
+Exercise (general case): If $X_1,\ldots,X_n$ are i.i.d. each with density $f(x)$ and cdf $F(x)$, the density of $X_{(1)} = \min\limits_{1\le i\le n}\{X_1, \ldots, X_n\}$ is:
+$$\f{X_{(1)}}(x) = nf(x)[1-F(x)]^{n-1}$$
+
+See section 3.7 up to the end of "E X A M P L E\ \ **B**"
+
+# expected value
+
+## big money! { .build }
+
+You and I agree to gamble on the outcome of one toss of one coin.
+
+If $H$ appears, I give you $100. If $T$ appears, you give me $100.
+
+This is a fair game. 
+
+Denote by $Y$ my financial outcome. $X$ is discrete with pmf:
+$$P(Y=y) = \begin{cases}
+0.5 &: y=100\\
+0.5 &: y=-100
+\end{cases}$$
+
+It's a fair game, so my "average" outcome should be 0. Otherwise it would not be rational for either of us to play the game!
+
+This average is exactly $(100)(0.5) + (-100)(0.5) = 0.$
+
+## expected value - discrete case
+
+Definition: The expected value of $X$ that takes on values $\{x_1,x_2,\ldots\}$ with pmf $p(x)$ is:
+$$E(X) = \sum_{i=1}^\infty x_ip(x_i)$$
+provided $\sum\limits_{i=1}^\infty |x_i|p(x_i) < \infty$. Otherwise $E(X)$ is undefined.
+
+## some of the "named" distributions
+
+$X\sim\text{Bernoulli}(p).$ Then $E(X)=p$.
+
+Proof: ...
+
+$X\sim\text{Binomial}(n,p).$ Then $E(X) = np$.
+
+Proof: ...
+
+$X\sim\text{Geometric}(p).$ Then $E(X) = p$. 
+
+Proof: ...
+
+Exercise (book example): $X\sim\text{Poisson}(\lambda).$ Then $E(X) = \lambda$. 
+
+## fun with expecations { .build }
+
+Suppose $X$ has pmf $p(x) = \frac{6}{\pi^2x^2}$ on $x \in \{1,2,3,\ldots\}.$ 
+
+Suppose $X$ has pmf $p(x) = \frac{3}{\pi^2x^2}$ on $x \in \{\pm1, \pm2, \pm3,\ldots\}.$
+
+Treat $X$ as a constant, i.e. $X = a$. Then $E(X)=E(a)=a$.
+
+For a sample space $S$ and event $A \subset S$, consider the "indicator" random variable $I_A.$ Then $E(I_A) = P(A).$
+
+## expected value - continuous case 
+
+If $X$ is continuous with density $f$, its expected value is:
+
+$$E(X) = \int\limits_{-\infty}^{\infty} xf(x)\,dx$$
+provided $\int\limits_{-\infty}^{\infty} |x|f(x)\,dx < \infty$.
+
+
+Example: $U \sim \text{Unif}[a,b]$...
+
+Example: $Z \sim N(0,1)$ ...
+
+Example (textbook): $X$ Cauchy....
+
+Example (textbook): $X \sim \text{Gamma}(\alpha, \lambda)$....
+
+## $E(g(X))$ and extensions { .build }
+
+Motivation: suppose $X \sim N(\mu, \sigma^2)$. What is $E(X)?$ The answer is $\mu$. Lots of ways to figure this out.
+
+Using the density is tedious but do-able. Or we could use the fact that $X = \mu + \sigma Z$ with $Z \sim N(0,1)$.
+
+Theorem: Given $X$ and $E(X)$ exists, consider $g(x) = a + bx$. Then $E(g(X)) = E(a + bX) = a + bE(X)$.
+
+Proof: ...
+
+## $E(g(X))$
+
+A theorem which is too difficult to prove generally is: given $X$, any* $g$, and $Y = g(X)$, then:
+$$E(Y) = E(g(X)) = \begin{cases}
+\sum g(x)p(x) &: X \text{ discrete}\\\\
+\int g(x)f(x)\,dx &: X \text{ continuous}
+\end{cases}$$
+in both cases provided the sum/integral congerges "absolutely" (i.e. with $|g(x)|.$)
+
+Example: Average volume of sphere with radius $R \sim \text{Exp}(1)$...
+
+## $E(g(X_1,\ldots,X_n))$ { .build }
+
+Some typical applications:
+
+$$E(X_1\cdot X_2)$$
+
+$$E\left(X_1 + X_2\right)$$
+
+$$E(X_1 + \cdots + X_n)$$
+
+$$E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)$$
+
+Theorem (continuous version): $X_1,\ldots,X_n$ have joint density $f(x_1,\ldots,x_n)$ and $Y = g(X_1,\ldots,X_n)$. Then:
+$$E(Y) = \int\ldots\int g(x_1,\ldots,x_n) f(x_1,\ldots,x_n)\,dx_1\ldots\,dx_n$$
+
+## examples
+
+Suppose $X_1 \perp X_2.$ Consider $E(X_1\cdot X_2)$...
+
+Now suppose $X_1,\ldots,X_n$ are i.i.d. with $E(X_i) = \mu.$ Consider:
+$$E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)...$$
+
+$X\sim \text{NegBin}(r,p)$...
+
+## putting a number on variation { .build }
+
+Expected value is a measure of "location", but random variables with the same "location" can be quite different.
+
+Consider the coin tossing game with $E(Y)=0$:
+$$P(Y=y) = \begin{cases}
+0.5 &: y=100\\
+0.5 &: y=-100
+\end{cases}$$
+
+One thing leads to another. Family trees are compared and contrasted, and after more than a few *schnapps* things get interesting:
+$$P(Y_2=y) = \begin{cases}
+0.5 &: y=1000\\
+0.5 &: y=-1000
+\end{cases}$$
+Still, $E(Y_2)=0$. But the values of $Y_2$ are more spread out.
+
+## variance
+
+One way to measure spread is to use the *variance* of $X$, defined as: $\V{X}=E\left[(X-E(X))^2\right].$
+
+This is a use of $E(g(X))$ with $g(x) = (x-E(X))^2$. 
+
+Very useful:
+$$\begin{align*}
+\V{X} &= \E{X^2 - 2XE(X) + E(X)^2} \\
+&= \E{X^2} - 2E(X)E(X) + E(X)^2\\
+&= \E{X^2} - E(X)^2.\end{align*}$$
+
+## examples { .build }
+
+$X \sim \text{Bernoulli}(p)$... 
+
+$Z \sim N(0,1)$...
+
+$X \sim \text{Poisson}(\lambda)$...(uses a trick!)
+
+Variance of $X=a$ constant.
+
+Basic examples for exercise: Exponential, Gamma, Geometric (trick: differentiate power series twice), Binomial (use Poisson trick).
+
+## $\V{a + bX}$, $\V{X + Y}$ (independent case) { .build }
+
+$\V{a + bX} = b^2\V{X}.$ Proof...
+
+Example: $X \sim N(\mu, \sigma^2)$
+
+When $X \perp Y$, $\V{X+Y}=\V{X}+\V{Y}.$ Proof...
+
+Actually independence is stronger than necessary. Only needed $E(XY)=E(X)E(Y);$ to be revisited.
+
+## variance of the "sample average"
+
+This is a "grand" example of particular importance. 
+
+Suppose again $X_1,\ldots,X_n$ is i.i.d. with $\E{X_i}=\mu$ and $\V{X_i}=\sigma^2.$. We already know $\E{\overline X}=\,\mu$. 
+
+What about $\V{\overline X}$?
+
+
+
+
+
+
