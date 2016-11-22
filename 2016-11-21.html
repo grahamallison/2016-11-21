@@ -89,7 +89,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-22 11:39</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-22 12:02</p>
           </hgroup>
   </slide>
 
@@ -196,13 +196,15 @@
 
 <p>For a sample space \(S\) and event \(A \subset S\), consider the &quot;indicator&quot; random variable \(I_A.\) Then \(E(I_A) = P(A).\)</p>
 
-</article></slide><slide class=''><hgroup><h2>expected value - continuous case</h2></hgroup><article  id="expected-value---continuous-case" class="build">
+</article></slide><slide class=''><hgroup><h2>expected value - continuous case</h2></hgroup><article  id="expected-value---continuous-case" class="build smaller">
 
 <p>If \(X\) is continuous with density \(f\), its expected value is:</p>
 
 <p>\[E(X) = \int\limits_{-\infty}^{\infty} xf(x)\,dx\] provided \(\int\limits_{-\infty}^{\infty} |x|f(x)\,dx &lt; \infty\).</p>
 
 <p>Examples: \(U \sim \text{Unif}[a,b]\), \(Z \sim N(0,1)\), \(X\) Cauchy,&#8230;</p>
+
+<p><strong>For a proof that the expected value (if it exists) of a random variable \(X\) with density symmetric around \(a\) must be \(E(X)=a\), see Theorem 6.1.1 in the supplemental text: Schay (2016) <em>Introduction to Probability with Statistical Applications</em></strong></p>
 
 <p>Exercise (textbook example): \(X \sim \text{Gamma}(\alpha, \lambda)\)</p>
 
@@ -212,7 +214,7 @@
 
 <p>The meaning of the discrete definition makes intuitive sense - \(E(X)\) is the probability-weighted average of the possible \(X\) outcomes.</p>
 
-<p>The continuous definition can be motivated by the notion of &quot;discretizing&quot; the range of \(X\) into a partition \(\{x_1,x_2,\ldots\}.\) and considering the following approximation, which is again a probability-weighted aveA slightly different view gives the meaning behind book question 4.13: \[\sum x_i P(x_i &lt; X \le x_{i+1}) = \sum x_i[F(x_{i+i})-F(x_i)]\]</p></article></slide>
+<p>The continuous definition can be motivated by the notion of &quot;discretizing&quot; the range of \(X\) into a partition \(\{x_1,x_2,\ldots\}.\) and considering the following approximation, which is again a probability-weighted average: \[E(X)\approx\sum x_i P(x_i &lt; X \le x_{i+1})\] Draw a diagram of this to see what is going on. If the partition is fine enough we have \(P(x_i &lt; X \le x_{i+1})\approx f(x_i)(x_{i+1} - x_i) \approx f(x_i)\Delta x_i.\) Pass to the limit: \[E(X)\approx\sum x_i P(x_i &lt; X \le x_{i+1}) \approx \sum x_i f(x_i)\Delta x_i \longrightarrow \int x\,f(x)\,dx\]</p></article></slide>
 
 
   <slide class="backdrop"></slide>

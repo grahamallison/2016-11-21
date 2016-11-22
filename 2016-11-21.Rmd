@@ -126,7 +126,7 @@ Treat $X$ as a constant, i.e. $X = a$. Then $E(X)=E(a)=a$.
 
 For a sample space $S$ and event $A \subset S$, consider the "indicator" random variable $I_A.$ Then $E(I_A) = P(A).$
 
-## expected value - continuous case { .build }
+## expected value - continuous case { .build .smaller }
 
 If $X$ is continuous with density $f$, its expected value is:
 
@@ -134,6 +134,8 @@ $$E(X) = \int\limits_{-\infty}^{\infty} xf(x)\,dx$$
 provided $\int\limits_{-\infty}^{\infty} |x|f(x)\,dx < \infty$.
 
 Examples: $U \sim \text{Unif}[a,b]$, $Z \sim N(0,1)$, $X$ Cauchy,...
+
+**For a proof that the expected value (if it exists) of a random variable $X$ with density symmetric around $a$ must be $E(X)=a$, see Theorem 6.1.1 in the supplemental text: Schay (2016) *Introduction to Probability with Statistical Applications***
 
 Exercise (textbook example): $X \sim \text{Gamma}(\alpha, \lambda)$
 
@@ -143,6 +145,8 @@ Not done in class. Take it or leave it.
 
 The meaning of the discrete definition makes intuitive sense - $E(X)$ is the probability-weighted average of the possible $X$ outcomes.
 
-The continuous definition can be motivated by the notion of "discretizing" the range of $X$ into a partition $\{x_1,x_2,\ldots\}.$ and considering the following approximation, which is again a probability-weighted aveA slightly different view gives the meaning behind book question 4.13:
-$$\sum x_i P(x_i < X \le x_{i+1}) = \sum x_i[F(x_{i+i})-F(x_i)]$$
+The continuous definition can be motivated by the notion of "discretizing" the range of $X$ into a partition $\{x_1,x_2,\ldots\}.$ and considering the following approximation, which is again a probability-weighted average:
+$$E(X)\approx\sum x_i P(x_i < X \le x_{i+1})$$
+Draw a diagram of this to see what is going on. If the partition is fine enough we have $P(x_i < X \le x_{i+1})\approx f(x_i)(x_{i+1} - x_i) \approx f(x_i)\Delta x_i.$ Pass to the limit:
+$$E(X)\approx\sum x_i P(x_i < X \le x_{i+1}) \approx \sum x_i f(x_i)\Delta x_i \longrightarrow \int x\,f(x)\,dx$$
 
