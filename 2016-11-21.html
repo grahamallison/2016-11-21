@@ -74,7 +74,7 @@
 
   </style>
 
-  <link href="data:text/css;charset=utf-8,p%2C%20li%2C%20pre%20%7B%0Acolor%3A%20black%3B%0A%7D%0Atd%20%7B%0Acolor%3A%20black%3B%0A%7D%0Atd%2C%20tr%2C%20th%20%7B%0Acolor%3A%20black%20%21important%3B%0Abackground%3Awhite%20%21important%3B%0Apadding%3A%204px%20%21important%3B%0A%7D%0Apre%20%7B%0Afont%2Dfamily%3A%20%27Source%20Code%20Pro%27%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2016px%3B%0Aline%2Dheight%3A%2022px%3B%0Apadding%3A%2010px%200%2010px%2060px%3B%0Aletter%2Dspacing%3A%20%2D1px%3B%0Amargin%2Dbottom%3A%2020px%3B%0Awidth%3A%20106%25%3B%0Aleft%3A%20%2D60px%3B%0Aposition%3A%20relative%3B%0A%2Dwebkit%2Dbox%2Dsizing%3A%20border%2Dbox%3B%0A%2Dmoz%2Dbox%2Dsizing%3A%20border%2Dbox%3B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0A%0A%7D%0A%2Ermdtable%20%7B%0Aborder%2Dtop%3A%201px%20solid%20%23797979%0A%7D" rel="stylesheet" type="text/css" />
+  <link href="data:text/css;charset=utf-8,p%2C%20li%2C%20pre%20%7B%0Acolor%3A%20black%3B%0A%7D%0Asmallnote%20%7B%0Afont%2Dsize%3A%208px%20%21important%3B%0A%7D%0Atd%20%7B%0Acolor%3A%20black%3B%0A%7D%0Atd%2C%20tr%2C%20th%20%7B%0Acolor%3A%20black%20%21important%3B%0Abackground%3Awhite%20%21important%3B%0Apadding%3A%204px%20%21important%3B%0A%7D%0Apre%20%7B%0Afont%2Dfamily%3A%20%27Source%20Code%20Pro%27%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2016px%3B%0Aline%2Dheight%3A%2022px%3B%0Apadding%3A%2010px%200%2010px%2060px%3B%0Aletter%2Dspacing%3A%20%2D1px%3B%0Amargin%2Dbottom%3A%2020px%3B%0Awidth%3A%20106%25%3B%0Aleft%3A%20%2D60px%3B%0Aposition%3A%20relative%3B%0A%2Dwebkit%2Dbox%2Dsizing%3A%20border%2Dbox%3B%0A%2Dmoz%2Dbox%2Dsizing%3A%20border%2Dbox%3B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0A%0A%7D%0A%2Ermdtable%20%7B%0Aborder%2Dtop%3A%201px%20solid%20%23797979%0A%7D" rel="stylesheet" type="text/css" />
 
   
 </head>
@@ -89,7 +89,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-21 13:30</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-11-22 11:39</p>
           </hgroup>
   </slide>
 
@@ -106,14 +106,14 @@
 
 <p>Exercise (textbook example): \(X \sim \text{Exp}(\lambda)\) and \(Y \sim \text{Exp}(\lambda)\) with \(X \perp Y\)</p>
 
-</article></slide><slide class=''><hgroup><h2>the classic density formulae: \(W_2 = Y\,/\,X\)</h2></hgroup><article  id="the-classic-density-formulae-w_2-yx">
+</article></slide><slide class=''><hgroup><h2>the classic density formulae: \(W_2 = Y\,/\,X\)</h2></hgroup><article  id="the-classic-density-formulae-w_2-yx" class="smaller">
 
 <p>\[\begin{align*}
 {f_{\tiny{W_2}}}(w) &amp;= \int\limits_{-\infty}^\infty f(x, wx)|x|\,dx\\
 &amp;= \int\limits_{-\infty}^\infty {f_{\tiny{X}}}(x){f_{\tiny{Y}}}(wx)|x|\,dx \quad \left(\text{when } X\perp Y\right)
 \end{align*}\]</p>
 
-<p>Proof&#8230;</p>
+<p><strong>NOTE ON PROOF IN CLASS</strong>: My notes were correct. Something did not translate to the board. It turns out I used exactly the same method of proof as the textbook. So you can look on page 98 and everything is there.</p>
 
 <p>&quot;<strong>Mandatory</strong>&quot; exercise (done in book as example): \(X \sim N(0,1)\) and \(Y \sim N(0,1)\) with \(X \perp Y\). This is a classic. We say \(W_2\) has a Cauchy distribution with density \(\frac{1}{\pi}\frac{1}{1+w^2}\)</p>
 
@@ -206,103 +206,13 @@
 
 <p>Exercise (textbook example): \(X \sim \text{Gamma}(\alpha, \lambda)\)</p>
 
-</article></slide><slide class=''><hgroup><h2>\(E(g(X))\) and extensions</h2></hgroup><article  id="egx-and-extensions" class="build">
+</article></slide><slide class=''><hgroup><h2>optional: &quot;meaning&quot; of continuous definition</h2></hgroup><article  id="optional-meaning-of-continuous-definition" class="smaller">
 
-<p>Motivation: suppose \(X \sim N(\mu, \sigma^2)\). What is \(E(X)?\) The answer is \(\mu\). Lots of ways to figure this out.</p>
+<p>Not done in class. Take it or leave it.</p>
 
-<p>Using the density is tedious but do-able. Or we could use the fact that \(X = \mu + \sigma Z\) with \(Z \sim N(0,1)\).</p>
+<p>The meaning of the discrete definition makes intuitive sense - \(E(X)\) is the probability-weighted average of the possible \(X\) outcomes.</p>
 
-<p>Theorem: Given \(X\) and \(E(X)\) exists, consider \(g(x) = a + bx\). Then \(E(g(X)) = E(a + bX) = a + bE(X)\).</p>
-
-<p>Proof: &#8230;</p>
-
-</article></slide><slide class=''><hgroup><h2>\(E(g(X))\)</h2></hgroup><article  id="egx">
-
-<p>A theorem which is too difficult to prove generally is: given \(X\), any* \(g\), and \(Y = g(X)\), then: \[E(Y) = E(g(X)) = \begin{cases}
-\sum g(x)p(x) &amp;: X \text{ discrete}\\\\
-\int g(x)f(x)\,dx &amp;: X \text{ continuous}
-\end{cases}\] in both cases provided the sum/integral congerges &quot;absolutely&quot; (i.e. with \(|g(x)|.\))</p>
-
-<p>Example: Average volume of sphere with radius \(R \sim \text{Exp}(1)\)&#8230;</p>
-
-</article></slide><slide class=''><hgroup><h2>\(E(g(X_1,\ldots,X_n))\)</h2></hgroup><article  id="egx_1ldotsx_n" class="build">
-
-<p>Some typical applications:</p>
-
-<p>\[E(X_1\cdot X_2)\]</p>
-
-<p>\[E\left(X_1 + X_2\right)\]</p>
-
-<p>\[E(X_1 + \cdots + X_n)\]</p>
-
-<p>\[E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)\]</p>
-
-<p>Theorem (continuous version): \(X_1,\ldots,X_n\) have joint density \(f(x_1,\ldots,x_n)\) and \(Y = g(X_1,\ldots,X_n)\). Then: \[E(Y) = \int\ldots\int g(x_1,\ldots,x_n) f(x_1,\ldots,x_n)\,dx_1\ldots\,dx_n\]</p>
-
-</article></slide><slide class=''><hgroup><h2>examples</h2></hgroup><article  id="examples">
-
-<p>Suppose \(X_1 \perp X_2.\) Consider \(E(X_1\cdot X_2)\)&#8230;</p>
-
-<p>Exercise: \(X_1 \perp X_2.\) Consider \({E\!\left(g(X_1)\, h(X_2)\right)}\)</p>
-
-<p>Now suppose \(X_1,\ldots,X_n\) are i.i.d. with \(E(X_i) = \mu.\) Consider: \[E\left(\overline{X}\right) = E\left(\frac{X_1 + \cdots + X_n}{n}\right)...\]</p>
-
-<p>\(X\sim \text{NegBin}(r,p)\)&#8230;</p>
-
-</article></slide><slide class=''><hgroup><h2>putting a number on variation</h2></hgroup><article  id="putting-a-number-on-variation" class="build">
-
-<p>Expected value is a measure of &quot;location&quot;, but random variables with the same &quot;location&quot; can be quite different.</p>
-
-<p>Consider the coin tossing game with \(E(Y)=0\): \[P(Y=y) = \begin{cases}
-0.5 &amp;: y=100\\
-0.5 &amp;: y=-100
-\end{cases}\]</p>
-
-<p>One thing leads to another. Family trees are compared and contrasted, and after more than a few <em>schnapps</em> things get interesting: \[P(Y_2=y) = \begin{cases}
-0.5 &amp;: y=1000\\
-0.5 &amp;: y=-1000
-\end{cases}\] Still, \(E(Y_2)=0\). But the values of \(Y_2\) are more spread out.</p>
-
-</article></slide><slide class=''><hgroup><h2>variance</h2></hgroup><article  id="variance">
-
-<p>One way to measure spread is to use the <em>variance</em> of \(X\), defined as: \({\text{Var}\!\left(X\right)}=E\left[(X-E(X))^2\right].\)</p>
-
-<p>This is a use of \(E(g(X))\) with \(g(x) = (x-E(X))^2\).</p>
-
-<p>Very useful: \[\begin{align*}
-{\text{Var}\!\left(X\right)} &amp;= {E\!\left(X^2 - 2XE(X) + E(X)^2\right)} \\
-&amp;= {E\!\left(X^2\right)} - 2E(X)E(X) + E(X)^2\\
-&amp;= {E\!\left(X^2\right)} - E(X)^2.\end{align*}\]</p>
-
-</article></slide><slide class=''><hgroup><h2>examples</h2></hgroup><article  id="examples-1" class="build">
-
-<p>\(X \sim \text{Bernoulli}(p)\)&#8230;</p>
-
-<p>\(Z \sim N(0,1)\)&#8230;</p>
-
-<p>\(X \sim \text{Poisson}(\lambda)\)&#8230;(uses a trick!)</p>
-
-<p>Variance of \(X=a\) constant.</p>
-
-<p>Basic examples for exercise: Exponential, Gamma, Geometric (trick: differentiate power series twice), Binomial (use Poisson trick).</p>
-
-</article></slide><slide class=''><hgroup><h2>\({\text{Var}\!\left(a + bX\right)}\), \({\text{Var}\!\left(X + Y\right)}\) (independent case)</h2></hgroup><article  id="textvarlefta-bxright-textvarleftx-yright-independent-case" class="build">
-
-<p>\({\text{Var}\!\left(a + bX\right)} = b^2{\text{Var}\!\left(X\right)}.\) Proof&#8230;</p>
-
-<p>Example: \(X \sim N(\mu, \sigma^2)\)</p>
-
-<p>When \(X \perp Y\), \({\text{Var}\!\left(X+Y\right)}={\text{Var}\!\left(X\right)}+{\text{Var}\!\left(Y\right)}.\) Proof&#8230;</p>
-
-<p>Actually independence is stronger than necessary. Only needed \(E(XY)=E(X)E(Y);\) to be revisited.</p>
-
-</article></slide><slide class=''><hgroup><h2>variance of the &quot;sample average&quot;</h2></hgroup><article  id="variance-of-the-sample-average">
-
-<p>This is a &quot;grand&quot; example of particular importance.</p>
-
-<p>Suppose again \(X_1,\ldots,X_n\) is i.i.d. with \({E\!\left(X_i\right)}=\mu\) and \({\text{Var}\!\left(X_i\right)}=\sigma^2.\). We already know \({E\!\left(\overline X\right)}=\,\mu\).</p>
-
-<p>What about \({\text{Var}\!\left(\overline X\right)}\)?</p></article></slide>
+<p>The continuous definition can be motivated by the notion of &quot;discretizing&quot; the range of \(X\) into a partition \(\{x_1,x_2,\ldots\}.\) and considering the following approximation, which is again a probability-weighted aveA slightly different view gives the meaning behind book question 4.13: \[\sum x_i P(x_i &lt; X \le x_{i+1}) = \sum x_i[F(x_{i+i})-F(x_i)]\]</p></article></slide>
 
 
   <slide class="backdrop"></slide>
